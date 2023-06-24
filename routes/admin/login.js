@@ -8,12 +8,21 @@ router.get('/', function (req, res, next) {
     });
   });
 
+  router.get('/logout', function (req, res, next){
+    req.session.destroy();
+    res.render('admin/login', {
+        layout: 'admin/layout'
+    });
+  });
+
+
 router.post ('/', async (req, res, next) => {
     try {
 
-        console.log(req.body);
-        var usario = req.body.usuario;
+    
+        var usuario = req.body.usuario;
         var password = req.body.password;
+        console.log(req.body);
         
 
         var data = await usuariosModel.getUserAndPassword (usuario, password);

@@ -11,35 +11,31 @@
         <div id="ObrasSociales" class=" col md-5 offset-md-2 py-3 scroll_section scroll_section">
             <h2>Obras Sociales</h2>
             <ul class=" lista-obrassociales">
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-                            src="Images/apross.png">Apross</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-                            src="images/pami.png">Pami</a>
-                </li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-                            src="images/sipssa.png">Sipssa</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-                            src="images/federada.png">Federada Salud</a></li>
-                <li><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-                            src="images/medife.jpg">Medifé</a></li>
+            {{#each novedades}}
+                <li>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#Modal{{id}}"><img src="images/salud-familiar.png">{{titulo}}</a>
+                    </li>
+                    {{/each}}
+
 
             </ul>
         </div>
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    {{#each novedades}}
+        <div class="modal fade" id="Modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h2 class="modal-title fs-5" id="exampleModalLabel">Info Receta</h2>
+                        <h2 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h2>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p> aca van cosas interesantes sobre la cerveza
-                        </p>
+                        <h4>{{subtitulo}}</h4>
+                        <p> {{texto}}</p>
                     </div>
                 </div>
             </div>
         </div>
-
+    {{/each}}
         <div class="col-md-3 my-3">
             <div class="Rounded py-5 testimonios">
                 <h2 class="text-center"> Comentarios</h2>
@@ -100,9 +96,14 @@
         <div class="col-lg-4 col-md-6 mt-4 mt-ms-0">
             <h2>Historia</h2>
             <p>
-                La farmacia esta en funcionamiento desde hace mas de 70 años contando con 3 generaciones de farmaceutios de la familia Ferri, el primero en hacerse cargo fue Ferri Luis Hugo, seguido por Ferri Juan Jose y por ultimo Ferri Paula.
-Es de las mas antiguas de la zona siendo antes un boticario, tiene muebles tallados a mano con una antiguedad de mas de 100 años. anteriormente en esta farmacia los medicamentos los hacia Luis, en su laboratorio.
-Esperamos que te guste esta breve introduccion y encontranos cuando quieras detras del mostrador, siempre con una sonrisa</p>
+                La farmacia esta en funcionamiento desde hace mas de 70 años contando con 3 generaciones de farmaceutios
+                de la familia Ferri, el primero en hacerse cargo fue Ferri Luis Hugo, seguido por Ferri Juan Jose y por
+                ultimo Ferri Paula.
+                Es de las mas antiguas de la zona siendo antes un boticario, tiene muebles tallados a mano con una
+                antiguedad de mas de 100 años. anteriormente en esta farmacia los medicamentos los hacia Luis, en su
+                laboratorio.
+                Esperamos que te guste esta breve introduccion y encontranos cuando quieras detras del mostrador,
+                siempre con una sonrisa</p>
         </div>
 
     </div>
@@ -115,7 +116,8 @@ Esperamos que te guste esta breve introduccion y encontranos cuando quieras detr
                         <img src="images/Juan Ferri (p).jpg" class="card-img-top " alt="juanjo">
                         <div class="card-body">
                             <h5 class="card-title">Juan Jose Ferri</h5>
-                            <p>Juan Jose, se recibio de farmaceutico en el año 1979 y trabaja en esta farmacia desde el 79
+                            <p>Juan Jose, se recibio de farmaceutico en el año 1979 y trabaja en esta farmacia desde el
+                                79
 
                             </p>
                         </div>
@@ -126,7 +128,8 @@ Esperamos que te guste esta breve introduccion y encontranos cuando quieras detr
                         <img src="images/Juan Ferri (h).jpg" class="card-img-top " alt="Juanse">
                         <div class="card-body">
                             <h5 class="card-title">Juan Jose Ferri (h)</h5>
-                            <p>Juan Jose Jr, Estudia analista en sistemas en la UNC y ayuda a su padre en la farmacia desde el 2020
+                            <p>Juan Jose Jr, Estudia analista en sistemas en la UNC y ayuda a su padre en la farmacia
+                                desde el 2020
 
                             </p>
                         </div>
@@ -168,7 +171,8 @@ Esperamos que te guste esta breve introduccion y encontranos cuando quieras detr
                 </div>
                 <div class="col-12">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="email@email.com" name="email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="email@email.com"
+                        name="email">
                 </div>
                 <div class="col-12">
                     <label for="tel" class="form-label">Tel</label>
@@ -180,9 +184,9 @@ Esperamos que te guste esta breve introduccion y encontranos cuando quieras detr
                         </textarea>
                 </div>
                 <div class="col-12">
-                    
+
                     <button type="sumbit" class="btn btn-primary"> Enviar</button>
-            
+
                 </div>
             </form>
         </div>
